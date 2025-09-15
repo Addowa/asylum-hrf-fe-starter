@@ -66,9 +66,18 @@ export const LandingPage = () => {
       {/* GRAPHS */}
       <section className="max-w-6xl mx-auto px-8 py-14">
         <div className="grid grid-cols-3 gap-6 overflow-x-auto">
-          <img src={barGraph} alt="bar chart" className="w-full h-64 object-contain" />
-          <img src={pieChart} alt="pie chart" className="w-full h-64 object-contain" />
-          <img src={lineGraph} alt="line graph" className="w-full h-64 object-contain" />
+          <article>
+            <img src={barGraph} alt="bar chart" className="w-full h-64 object-contain" />
+            <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates By Office</p>
+          </article>
+          <article>
+            <img src={pieChart} alt="pie chart" className="w-full h-64 object-contain" />
+            <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates By Nationality</p>
+          </article>
+          <article>
+            <img src={lineGraph} alt="line graph" className="w-full h-64 object-contain" />
+            <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates Over Time</p>
+          </article>
         </div>
         <div className="flex gap-4">
           <button
