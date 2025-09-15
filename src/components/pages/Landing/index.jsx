@@ -64,8 +64,8 @@ export const LandingPage = () => {
       </section>
 
       {/* GRAPHS */}
-      <section className="max-w-6xl mx-auto px-8 py-14 flex flex-col items-center gap-10">
-        <div className="grid grid-cols-1 gap-8 w-full max-w-3xl">
+      <section className="max-w-6xl mx-auto px-8 py-14">
+        <div className="grid grid-cols-3 gap-6 overflow-x-auto">
           <img src={barGraph} alt="bar chart" className="w-full h-64 object-contain" />
           <img src={pieChart} alt="pie chart" className="w-full h-64 object-contain" />
           <img src={lineGraph} alt="line graph" className="w-full h-64 object-contain" />
@@ -144,12 +144,6 @@ export const LandingPage = () => {
           Back To Top
         </button>
       </section>
-
-      {/* FOOTER */}
-      <footer className="mt-auto w-full bg-gray-800 text-white py-6 text-center">
-        {/* Keep your existing footer content here */}
-        Footer content unchanged
-      </footer>
     </main>
   );
 };
