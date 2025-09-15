@@ -79,16 +79,16 @@ export const LandingPage = () => {
             <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates Over Time</p>
           </article>
         </div>
-        <div className="flex gap-4">
+        <div className="mt-12 flex justify-center gap-6">
           <button
             onClick={handleExplore}
-            className="px-6 py-3 rounded-2xl bg-blue-600 text-white font-semibold shadow"
+            className="px-6 py-3 rounded-2xl bg-primary-c text-amber-50 font-semibold shadow hover:scale-[1.02] transition"
           >
             View the Data
           </button>
           <button
             onClick={() => downloadCSV()}
-            className="px-6 py-3 rounded-2xl bg-green-600 text-white font-semibold shadow"
+            className="px-6 py-3 rounded-2xl bg-white text-gray-800 border font-medium hover:shadow"
           >
             Download the Data
           </button>
