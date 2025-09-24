@@ -110,47 +110,63 @@ export const LandingPage = () => {
       </section>
 
       {/* SYSTEMIC DISPARITY INSIGHTS */}
-      <section className="max-w-4xl mx-auto px-8 py-14 text-left">
-        <h2 className="text-2xl font-bold mb-8">Systemic Disparity Insights</h2>
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-bold">36%</h3>
-            <p>
-              By the end of the Trump administration, the average asylum office
-              grant rate had fallen 36% from an average of 44 percent in fiscal
-              year 2016 to 28 percent in fiscal year 2020.
-            </p>
+      <section className="insights-section flex-c gap-16">
+        <div className="insights-section-header">
+          <h3 className="text-5xl">Systemic Disparity Insights</h3>
+        </div>
+        <div className="insights-section-details flex justify-center m-14 gap-20 text-2xl">
+          <div className="flec-c-l gap-12">
+            <div className="insights-details-header">
+              <h3 className="text-4xl">36%</h3>
+            </div>
+            <div className="insights-details-contents">
+              <p className="text-lg">
+                By the end of the Trump administration, the average asylum office
+                grant rate had fallen 36% from an average of 44 percent in fiscal
+                year 2016 to 28 percent in fiscal year 2020.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-bold">5%</h3>
-            <p>
-              The New York asylum office grant rate dropped to 5 percent in
-              fiscal year 2020.
-            </p>
+          <div className="flex-c-l gap-12">
+            <div className="insights-details-header">
+              <h3 className="text-4xl">5%</h3>
+            </div>
+            <div className="insights-details-content">
+              <p className="text-lg">
+                The New York asylum office grant rate dropped to 5 percent in
+                fiscal year 2020.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-bold">6x Lower</h3>
-            <p>
-              Between fiscal year 2017 and 2020, the New York asylum office&apos;s
-              average grant rate was 6 times lower than the San Francisco asylum office.
-            </p>
+          <div className="flex-c-l gap-12">
+            <div className="insights-details-header">
+              <h3 className="text-4xl">6x Lower</h3>
+            </div>
+            <div className="insights-details-content">
+              <p className="text-lg">
+                Between fiscal year 2017 and 2020, the New York asylum office&apos;s
+                average grant rate was 6 times lower than the San Francisco asylum office.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* READ MORE + BACK TO TOP */}
-      <section className="py-10 flex flex-col items-center gap-4">
+      <section className="read-more-section">
         <button
           onClick={handleReadMore}
-          className="px-6 py-3 rounded-2xl bg-blue-700 text-white font-semibold shadow"
+          className="primary-c text-white px-4 py-2"
         >
           Read More
         </button>
+      </section>
+      <section className="back-to-top p-16">
         <button
           onClick={scrollToTop}
-          className="px-6 py-3 rounded-2xl bg-gray-600 text-white font-semibold shadow"
+          className="back-to-top font-medium"
         >
-          Back To Top
+          Back To Top ^
         </button>
       </section>
     </main>
