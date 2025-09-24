@@ -48,65 +48,69 @@ export const LandingPage = () => {
   //   </div>
   // );
   return (
-    <main className="flex flex-col w-full min-h-screen bg-gray-50 text-gray-800 font-sans">
+    <main className="flex flex-col w-full min-h-screen bg-gray-50 text-gray-800">
       {/* HERO */}
-      <section className="w-full primary-c text-amber-50 py-20">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold">
+      <section className="flex primary-c pt-4 pb-8">
+        <div className="flex-c mx-auto">
+          <h1 className="text-6xl mb-8 text-white">
             Asylum Office Grant Rate Tracker
           </h1>
-          <p className="mt-6 text-lg md:text-xl">
+          <h3 className="text-white">
             The Asylum Office Grant Rate Tracker provides asylum seekers,
             researchers, policymakers, and the public an interactive tool to
             explore USCIS data on Asylum Office decisions
-          </p>
+          </h3>
         </div>
       </section>
 
       {/* GRAPHS */}
-      <section className="max-w-6xl mx-auto px-8 py-14">
-        <div className="grid grid-cols-3 gap-6 overflow-x-auto">
-          <article>
-            <img src={barGraph} alt="bar chart" className="w-full h-64 object-contain" />
-            <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates By Office</p>
-          </article>
-          <article>
-            <img src={pieChart} alt="pie chart" className="w-full h-64 object-contain" />
-            <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates By Nationality</p>
-          </article>
-          <article>
-            <img src={lineGraph} alt="line graph" className="w-full h-64 object-contain" />
-            <p className="mt-2 text-xs text-gray-500 italic">Search Grant Rates Over Time</p>
-          </article>
-        </div>
-        <div className="mt-12 flex justify-center gap-6">
-          <button
-            onClick={handleExplore}
-            className="px-6 py-3 rounded-2xl bg-primary-c text-amber-50 font-semibold shadow hover:scale-[1.02] transition"
-          >
-            View the Data
-          </button>
-          <button
-            onClick={() => downloadCSV()}
-            className="px-6 py-3 rounded-2xl bg-white text-gray-800 border font-medium hover:shadow"
-          >
-            Download the Data
-          </button>
+      <section className="graphs-section flex-c pt-10">
+        <div className="flex-c">
+          <div className="flex justify-center m-14 gap-20 text-2xl">
+            <div className="flex-c gap-3">
+              <img src={barGraph} alt="bar chart" className="h-[300px] w-[500px]" />
+              <h3>Search Grant Rates By Office</h3>
+            </div>
+            <div className="flex-c gap-3">
+              <img src={pieChart} alt="pie chart" className="h-[300px] contain-content" />
+              <h3>Search Grant Rates By Nationality</h3>
+            </div>
+            <div className="flex-c gap-3">
+              <img src={lineGraph} alt="line graph" className="h-[300px] w-[500px]" />
+              <h3>Search Grant Rates Over Time</h3>
+            </div>
+          </div>
+          <div className="flex align-center mx-auto gap-8">
+            <button
+              onClick={handleExplore}
+              className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold"
+            >
+              View the Data
+            </button>
+            <button
+              onClick={() => downloadCSV()}
+              className="bg-[#aaa] px-[10px] py-[5px] text-white text-md font-semibold"
+            >
+              Download the Data
+            </button>
+          </div>
         </div>
       </section>
 
       {/* REPORT + TEXT */}
-      <section className="max-w-6xl mx-auto px-8 py-14 flex flex-col md:flex-row items-center gap-8">
-        <div className="w-60 h-80 rounded-lg overflow-hidden shadow-lg">
-          <img src={paperStack} alt="annual report" className="w-full h-full object-cover" />
+      <section className="middle-section flex">
+        <div className="flex-1 hrf-img-container content-center p-20">
+          <img src={paperStack} alt="Human Rights First" className="hrf-img rounded-2xl h-[70%] w-[100%]" />
         </div>
-        <p className="text-left max-w-2xl">
-          Human Rights First has created a search tool to give you a user-friendly way
-          to explore a data set of asylum decisions between FY 2016 and May 2021 by the
-          USCIS Asylum Office, which we received through a Freedom of Information Act request.
-          You can search for information on asylum grant rates by year, nationality, and asylum office,
-          visualize the data with charts and heat maps, and download the data set.
-        </p>
+        <div className="middle-section-text-container flex-1 content-center p-20">
+          <p className="text-xl">
+            Human Rights First has created a search tool to give you a user-friendly way
+            to explore a data set of asylum decisions between FY 2016 and May 2021 by the
+            USCIS Asylum Office, which we received through a Freedom of Information Act request.
+            You can search for information on asylum grant rates by year, nationality, and asylum office,
+            visualize the data with charts and heat maps, and download the data set.
+          </p>
+        </div>
       </section>
 
       {/* SYSTEMIC DISPARITY INSIGHTS */}
