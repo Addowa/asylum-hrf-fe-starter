@@ -48,7 +48,7 @@ export const LandingPage = () => {
   //   </div>
   // );
   return (
-    <main className="flex flex-col w-full min-h-screen bg-gray-50 text-gray-800">
+    <main className="flex flex-col w-full min-h-screen bg-gray-50 text-gray-800 font-serif">
       {/* HERO */}
       <section className="flex primary-c pt-4 pb-8">
         <div className="flex-c mx-auto">
