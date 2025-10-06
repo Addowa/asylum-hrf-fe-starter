@@ -41,12 +41,6 @@ export const LandingPage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // return (
-  //   <div className='flex flex-col w-full min-h-screen bg-gray-50 text-gray-800 font-sans'>
-      
-  //     <div>{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div>
-  //   </div>
-  // );
   return (
     <main className="flex flex-col w-full min-h-screen bg-gray-50 text-gray-800 font-serif">
       {/* HERO */}
