@@ -34,7 +34,23 @@ const useAppContextProvider = () => {
   };
 
   const fetchData = async () => {
-    // TODO: fetch all the required data and set it to the graphData state
+    try {
+      const [fiscalData, citizenshipData] = await Promise.all([
+        getFiscalData(),
+        getCitizenshipResults(),
+      ]);
+      if (fiscalData && citizenshipData) {
+        const combinedData = {
+          ...fiscalData,
+          citizenshipResults: citizenshipData.citizenshipResults,
+        };
+        setGraphData(combinedData);
+      }
+    } catch (error) {
+      console.error('Error fetching combined data:', error);
+    } finally {
+      setIsDataLoading(false);
+    }
   };
 
   const updateQuery = async () => {
@@ -45,7 +61,8 @@ const useAppContextProvider = () => {
     setGraphData({});
   };
 
-  const getYears = () => graphData?.yearResults?.map(({ fiscal_year }) => Number(fiscal_year)) ?? [];
+  const getYears = () => 
+    graphData?.yearResults?.map(({ fiscal_year }) => Number(fiscal_year)) ?? [];
 
   useEffect(() => {
     if (isDataLoading) {
