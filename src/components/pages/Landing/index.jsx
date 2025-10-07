@@ -7,43 +7,32 @@ import { useNavigate } from 'react-router-dom';
 import { useDownloadData } from '../../../hooks/useDownloadData.js';
 import {decodeBase64} from '../../../utils/decodeBase64.js';
 
-/**
- * TODO: Ticket 1:
- * Implement structure and styles of the Landing page using Tailwind
- * Implement any button functionality implied by the landing page screenshot example (tickets/examples)
- */
 export const LandingPage = () => {
   const navigate = useNavigate();
   const { downloadCSV } = useDownloadData();
 
- // const scrollToTop = () => {
- //   let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
-  //  let scrollInterval = setInterval(() => {
-    //  if (window.scrollY === 0) {
-      //  clearInterval(scrollInterval);
-     // } else {
-     //   window.scrollBy(0, scrollStep);
-     // }
-   // }, 10); // Adjust the interval time for smoothness
- // };
  const scrollToTop = () => {
-    // smooth scroll to top (works across browsers)
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+   let scrollStep = -window.scrollY / 20;
+   let scrollInterval = setInterval(() => {
+     if (window.scrollY === 0) {
+       clearInterval(scrollInterval);
+     } else {
+       window.scrollBy(0, scrollStep);
+     }
+   }, 10);
+ };
 
   const handleReadMore = () => {
-    window.open('https://humanrightsfirst.org', '_blank', 'noopener,noreferrer');
+    window.open('https://humanrightsfirst.org', '_self');
   };
 
   const handleExplore = () => {
     navigate('/graphs');
-    // make sure page starts at top when navigating
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <main className="flex flex-col w-full min-h-screen bg-gray-50 text-gray-800 font-serif">
-      {/* HERO */}
       <section className="flex primary-c pt-4 pb-8">
         <div className="flex-c mx-auto">
           <h1 className="text-6xl mb-8 text-white">
@@ -56,8 +45,7 @@ export const LandingPage = () => {
           </h3>
         </div>
       </section>
-
-      {/* GRAPHS */}
+    
       <section className="graphs-section flex-c pt-10">
         <div className="flex-c">
           <div className="flex justify-center m-14 gap-20 text-2xl">
@@ -90,8 +78,7 @@ export const LandingPage = () => {
           </div>
         </div>
       </section>
-
-      {/* REPORT + TEXT */}
+      
       <section className="middle-section flex">
         <div className="flex-1 hrf-img-container content-center p-20">
           <img src={paperStack} alt="Human Rights First" className="hrf-img rounded-2xl h-[70%] w-[100%]" />
@@ -106,8 +93,7 @@ export const LandingPage = () => {
           </p>
         </div>
       </section>
-
-      {/* SYSTEMIC DISPARITY INSIGHTS */}
+      
       <section className="insights-section flex-c gap-16">
         <div className="insights-section-header">
           <h3 className="text-5xl">Systemic Disparity Insights</h3>
@@ -149,8 +135,7 @@ export const LandingPage = () => {
           </div>
         </div>
       </section>
-
-      {/* READ MORE + BACK TO TOP */}
+      
       <section className="read-more-section">
         <button
           onClick={handleReadMore}
