@@ -42,6 +42,8 @@ export const HeatMap = () => {
           hoverlabel: {
             bordercolor: 'white',
           },
+          xaxis: { title: 'USCIS Asylum Office' },
+          yaxis: { title: 'Fiscal Year' },
         }}
       />
     </div>
